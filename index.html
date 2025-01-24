@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virchill - Press Kit</title>
+
+  <!-- Polices réellement utilisées -->
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --deep-space: #0b0d17;
+      --nebula-purple: #2a234e;
+      --starlight: #c792ea;
+      --cosmic-dust: #676e8a;
+      --event-horizon: #121212;
+    }
+
+    body {
+      font-family: 'Space Mono', monospace;
+      margin: 0;
+      background: var(--deep-space);
+      color: #e0e0e0;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      height: 90vh;
+      background:
+        radial-gradient(ellipse at 50% 40%, rgba(42, 35, 78, 0.2) 0%, transparent 60%),
+        linear-gradient(15deg, rgba(18, 18, 18, 0.3) 20%, transparent 100%),
+        url('images/VIRCHILL.jpg') center 25%/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg,
+        rgba(11, 13, 23, 0.9) 0%,
+        rgba(42, 35, 78, 0.4) 50%,
+        rgba(11, 13, 23, 0.9) 100%);
+      z-index: -1;
+    }
+
+    .hero-content {
+      text-align: center;
+      mix-blend-mode: screen;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 40%;
+      background: radial-gradient(circle, rgba(199, 146, 234, 0.1) 0%, transparent 60%);
+      filter: blur(40px);
+      bottom: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+
+    .hero-content::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 100px;
+      background: linear-gradient(transparent, #c792ea, transparent);
+      bottom: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .container {
+      max-width: 80%;
+      margin: 0 auto;
+      padding: 2rem 4rem;
+      width: 90%;
+    }
+
+    .bio-section {
+      background: linear-gradient(160deg,
+        rgba(18, 18, 18, 0.95) 0%,
+        rgba(42, 35, 78, 0.3) 100%);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 4rem;
+      margin-top: -100px;
+      border: 1px solid var(--cosmic-dust);
+      box-shadow: 0 0 40px rgba(199, 146, 234, 0.1);
+    }
+
+    h1 {
+      font-family: 'Jersey 15', cursive;
+      font-size: clamp(3rem, 8vw, 5rem);
+      color: transparent;
+      background: linear-gradient(45deg,
+        #c792ea 25%,
+        #b56bff 50%,
+        #9050ff 75%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-transform: uppercase;
+      letter-spacing: clamp(8px, 2vw, 15px);
+      margin: 0;
+      position: relative;
+      z-index: 2;
+      padding: 1.5rem 3rem;
+      border-radius: 15px;
+      overflow: hidden;
+      font-weight: 300;
+      animation: float 6s ease-in-out infinite;
+      text-shadow: 0 0 40px rgba(199, 146, 234, 0.4),
+                   0 0 80px rgba(181, 107, 255, 0.3),
+                   0 0 120px rgba(144, 80, 255, 0.2);
+      backdrop-filter: blur(12px);
+      background-color: rgba(42, 35, 78, 0.15);
+      border: 1px solid rgba(199, 146, 234, 0.2);
+      box-shadow: inset 0 0 30px rgba(199, 146, 234, 0.1),
+                  0 0 60px rgba(144, 80, 255, 0.2);
+    }
+
+    h1::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg,
+        transparent 45%,
+        rgba(199, 146, 234, 0.1) 50%,
+        transparent 55%);
+      animation: glowRotate 8s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0.5deg);
+      }
+      50% {
+        transform: translateY(-15px) rotate(-0.5deg);
+      }
+    }
+
+    @keyframes glowRotate {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+	
+	h2, h3 {
+	font-family: 'Jersey 15', cursive;
+	display: inline-block;
+  color: transparent; /* Pour le dégradé */
+  background: linear-gradient(45deg, #c792ea, #b56bff, #9050ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  position: relative;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+h3 {
+
+  font-size: 1.8rem; /* Taille pour les projets ou autres sous-titres */
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(199, 146, 234, 0.2);
+}
+
+h2::after, h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #c792ea, #b56bff);
+  transition: width 0.3s ease;
+}
+
+    h2 {
+	font-family: 'Jersey 15', cursive;
+      color: var(--starlight);
+      font-size: 2rem;
+      position: relative;
+      padding-left: 2rem;
+      margin: 3rem 0;
+	  margin-bottom: 2rem;
+	  text-shadow: 0 0 10px rgba(199, 146, 234, 0.3);
+    }
+
+    h2::before {
+      content: '❖';
+      font-family: 'Jersey 15', cursive;
+      content: '❖';
+      position: relative;
+      left: -0.8em;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.4rem;
+      color: #b56bff;
+      text-shadow: 0 0 15px rgba(181, 107, 255, 0.4);
+      animation: sparkle 2s infinite ease-in-out;
+      z-index: 1;
+    }
+	h2:hover::after, h3:hover::after {
+  width: 80%; /* Barre lumineuse au survol */
+}
+h2:hover, h3:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 0 10px rgba(199, 146, 234, 0.5),
+               0 0 20px rgba(181, 107, 255, 0.4);
+}
+
+    p {
+      font-size: 1.1rem;
+      color: #d0d0d0;
+      margin: 1.5rem 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+	    padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(199,146,234,0.2);
+  background: linear-gradient(135deg,
+    rgba(42, 35, 78, 0.1),
+    rgba(18, 18, 18, 0.1)
+  );
+  box-shadow: 0 0 30px rgba(199, 146, 234, 0.1);
+    }
+
+    .card {
+  position: relative; /* pour pouvoir utiliser ::before */
+  background: rgba(18, 18, 18, 0.6);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid var(--cosmic-dust);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden; /* pour éviter que le halo déborde */
+}
+.card h3 {
+  font-family: 'Jersey 15', cursive;
+  font-size: 1.8rem;
+  color: transparent; /* pour permettre le dégradé */
+  background: linear-gradient(45deg, #c792ea, #b56bff, #9050ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+.card h3:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 0 10px rgba(199, 146, 234, 0.5), 
+               0 0 20px rgba(181, 107, 255, 0.4);
+}
+
+.card h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #c792ea, #b56bff);
+  transition: width 0.3s ease;
+}
+
+.card h3:hover::after {
+  width: 80%; /* Barre s'étend au survol */
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(199, 146, 234, 0.05) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(42, 35, 78, 0.4);
+      box-shadow: 0 10px 30px rgba(199, 146, 234, 0.1);
+	  border-color: var(--starlight);
+    }
+	.card:hover::before {
+  opacity: 1; /* le halo violet apparaît au survol */
+}
+
+    a {
+      color: var(--starlight);
+      text-decoration: none;
+      position: relative;
+    }
+
+    a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    .artist-img {
+	position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: -80px auto 0;
+      border: 3px solid var(--starlight);
+      box-shadow: 0 0 40px rgba(199, 146, 234, 0.3);
+      object-fit: cover;
+	  z-index: 10;
+    }
+
+    .signature-wrapper {
+      position: relative;
+      margin-top: 2rem;
+      overflow: auto;
+    }
+
+    .residence-image {
+      width: 40%;
+      float: left;
+      margin: 0 2rem 1rem 0;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(199, 146, 234, 0.1);
+      border: 1px solid rgba(199, 146, 234, 0.2);
+    }
+
+    .residence-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .residence-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .signature-content {
+      padding-left: 2rem;
+    }
+
+    .instrument-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .instrument-list li {
+      padding: 0.8rem;
+      background: rgba(199, 146, 234, 0.05);
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid rgba(199, 146, 234, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    .instrument-list li:hover {
+      background: rgba(199, 146, 234, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .soundcloud-embed {
+        padding: 1.5rem;
+      }
+      .soundcloud-embed iframe {
+        height: 120px;
+      }
+      .signature-content h3 {
+        margin-left: 15px;
+        padding-left: 30px;
+      }
+      .signature-content h3::before {
+        left: -15px;
+        font-size: 1.2rem;
+      }
+      .residence-image {
+        float: none;
+        width: 100%;
+        margin: 0 0 2rem 0;
+      }
+    }
+
+    .signature-content h3 {
+      font-family: 'Jersey 15', monospace;
+      font-weight: 700;
+      color: var(--starlight);
+      font-size: 1.8rem;
+      position: relative;
+      padding-left: 2em;
+      margin-left: 0px;
+      margin: 2.5rem 0 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .signature-content h3::before {
+	font-family: 'Jersey 15', cursive;
+      content: '❖';
+      position: relative;
+      left: -0.8em;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.4rem;
+      color: #b56bff;
+      text-shadow: 0 0 15px rgba(181, 107, 255, 0.4);
+      animation: sparkle 2s infinite ease-in-out;
+      z-index: 1;
+    }
+
+    .signature-content p {
+      background: rgba(42, 35, 78, 0.2);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--starlight);
+      box-shadow: 0 4px 20px rgba(18, 18, 18, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .signature-content p::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(199, 146, 234, 0.1),
+        transparent
+      );
+      animation: shine 6s infinite;
+    }
+
+    .genre-tags {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+
+    .genre-tags strong {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: linear-gradient(45deg, #2a234e, #1a1535);
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: 1px solid var(--starlight);
+      box-shadow: 0 2px 8px rgba(199, 146, 234, 0.1);
+    }
+
+    @keyframes sparkle {
+      0%, 100% {
+        opacity: 0.6;
+        transform: translateY(-50%) scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.2);
+      }
+    }
+
+    @keyframes shine {
+      100% { left: 200%; }
+    }
+
+    .soundcloud-embed {
+      background: rgba(18, 18, 18, 0.6);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid var(--cosmic-dust);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .soundcloud-embed::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg,
+        rgba(199, 146, 234, 0.05) 0%,
+        rgba(42, 35, 78, 0.1) 50%,
+        rgba(11, 13, 23, 0.2) 100%);
+      pointer-events: none;
+    }
+
+    .soundcloud-embed h3 {
+      font-family: 'Jersey 15', cursive;
+      color: var(--starlight);
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .soundcloud-embed iframe {
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(199, 146, 234, 0.1);
+      border: 1px solid rgba(199, 146, 234, 0.2);
+      background: var(--event-horizon);
+    }
+	.social-links a {
+    font-size: 1.8rem;
+    color: var(--starlight);
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #b56bff;
+    transform: scale(1.1);
+}
+
+.cta {
+    text-align: center;
+    background: linear-gradient(160deg, rgba(42, 35, 78, 0.3), rgba(18, 18, 18, 0.8));
+    padding: 2rem;
+    margin-top: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(199, 146, 234, 0.2);
+}
+
+.cta h2 {
+    color: var(--starlight);
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    color: #d0d0d0;
+    margin-bottom: 2rem;
+}
+
+.cta .btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(45deg, #c792ea, #b56bff);
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(199, 146, 234, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(181, 107, 255, 0.6);
+}
+
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(11, 13, 23, 0.9);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.sticky-nav a {
+    margin: 0 1rem;
+    color: var(--starlight);
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sticky-nav a:hover {
+    color: #b56bff;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+html {
+    scroll-behavior: smooth;
+}
+
+  </style>
+</head>
+
+<body>
+	  <nav class="sticky-nav">
+    <a href="#biographie">Biographie</a>
+	<a href="#signature">Signature Artistique</a>
+    <a href="#projets">Projets</a>
+    <a href="#connexion">Connexion</a>
+</nav>
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Virchill</h1>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="bio-section">
+      <img src="images/poulpysworld.jpg" alt="Virchill" class="artist-img">
+
+		<div id="biographie" class="bio-section">
+      <h2>Biographie</h2>
+      <p>
+Né au cœur de festivals vibrants et bercé par des vagues psychédéliques, Virchill incarne un univers où la musique trance fusionne harmonieusement avec une quête de sens profond.      </p>
+      <p>
+Puisant son inspiration dans l’immensité de la culture psychédélique et son propre parcours transpersonnel, Virchill transforme chaque expérience d’écoute en un voyage introspectif, subtil et captivant.      </p>
+      <p>
+À travers ses sets et performances live, il tisse une alchimie délicate de virbrations mystiques, dessinant des paysages sonores où l’énergie douce du psychédélique se mêle à une intensité vivifiante. Chaque voyage est une invitation à se laisser transporter, et à dissoudre les frontières entre le son et l’âme.  </p>
+	  </div>
+
+      <h2 id="signature">Signature Artistique</h2>
+      <div class="signature-wrapper">
+        <div class="residence-image">
+          <img src="images/Virchill_Residence.jpg" alt="Virchill en résidence artistique">
+        </div>
+        <div class="signature-content">
+          <h3>Exploration Sonore</h3>
+          <p>
+            Son univers s'articule autour de la <strong>transe psychédélique</strong>, 
+            mêlant énergie tribale et textures ambient.
+          </p>
+          <div class="genre-tags">
+            <strong>Ambient</strong>
+            <strong>Psychill</strong>
+            <strong>Psybient</strong>
+            <strong>Chillgressive</strong>
+            <strong>Downtempo</strong>
+          </div>
+          <br>
+          <h3>Instruments &amp; Outils</h3>
+          <ul class="instrument-list">
+            <li>Didgeridoo</li>
+            <li>Handpan</li>
+            <li>Flûte</li>
+            <li>Tambour Chamanique</li>
+            <li>Synthés et machines</li>
+            <li>Field Recordings</li>
+          </ul>
+
+          <h3>Évolution Artistique</h3>
+          <p>
+            S'orientant progressivement vers des performances <strong class="live-glow">live hybrides</strong>, 
+            combinant des instruments acoustiques avec des setups électroniques modulaires. 
+            Son objectif est de créer des sets uniques, où chaque performance est une 
+            exploration spontanée de l'instant présent.
+          </p>
+        </div>
+      </div>
+
+      <h2 id="projets">Projets Clés</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Poulpy's Journey</h3>
+          <p>Récit d'un conte initiatique à travers la voix, les instruments ancestraux et l'électronique ambient.</p>
+          <div style="padding:56.25% 0 0 0;position:relative;">
+            <iframe 
+              src="https://player.vimeo.com/video/1049121358?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+              frameborder="0" 
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+              style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+              title="HADRA LIVE - VIRCHILL">
+            </iframe>
+          </div>
+          <script src="https://player.vimeo.com/api/player.js"></script>
+
+          <p>Projet de 1h à 1h30, seul ou avec une chanteuse. Pour écouter tout le set :</p>
+          <iframe 
+            width="100%" 
+            height="300" 
+            scrolling="no" 
+            frameborder="no" 
+            allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1956979247&amp;color=%23d75fc1&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true">
+          </iframe>
+          <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+            <a href="https://soundcloud.com/hadratrancefestival" title="Hadra Trance Festival" target="_blank" style="color: #cccccc; text-decoration: none;">Hadra Trance Festival</a> · 
+            <a href="https://soundcloud.com/hadratrancefestival/virchill-hadra-trance-festival-2024" title="Virchill | Hadra Trance Festival 2024" target="_blank" style="color: #cccccc; text-decoration: none;">
+              Virchill | Hadra Trance Festival 2024
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>DJ set Chill</h3>
+          <p>Voyage d'exploration chill (voir styles préférés ci-dessus) de 1h à 3h, adaptable à l'énergie du moment de la journée (et des artistes avant et après).</p>
+          <div class="soundcloud-embed">
+            <iframe 
+              width="100%" 
+              height="166"
+              scrolling="no" 
+              frameborder="no" 
+              allow="autoplay" 
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1810443699&amp;color=%23c792ea&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true">
+            </iframe>
+            <div class="soundcloud-attribution">
+              <a href="https://soundcloud.com/poulpys" target="_blank">Poulpy</a> · 
+              <a href="https://soundcloud.com/poulpys/virchill-bicycle-night-dj-set-downtempo-to-chillgressive" target="_blank">
+                Virchill @ Drak'Art Bicycle Night 2024 - Ambient Downtempo to Chillgressive
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>DJ set Ecstatic Danse</h3>
+          <p>Un set d’Ecstatic Dance de 1h30 à 3h, où rythmes organiques et vibrations psychédéliques s’entrelacent pour guider un voyage libre et intuitif dans l'expression corporelle, mêlant énergie tribale et exploration intérieure.</p>
+        </div>
+      </div>
+
+      <h2 id="connexion">Connexion</h2>
+<div class="card connexion">
+	<div class="cta">
+    <h2>Prêt pour une collaboration ?</h2>
+    <p>Contactez Virchill pour organiser une performance live ou un DJ set unique. Ou pour toute proposition de collaboration :</p>
+    <a href="mailto:hiboufurieux@gmail.com" class="btn">Contactez-moi</a>
+</div>
+</div>
+    </div>
+  </div>
+</body>
+</html>
