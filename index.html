@@ -670,6 +670,109 @@ html {
 .grid {
     margin-bottom: 3rem; /* Ajoute de l'espace sous la section Projets Clés */
 }
+
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+}
+
+p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.card h3 {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.bio-section {
+  margin: 1rem 0;
+  padding: 2rem;
+}
+
+.sticky-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sticky-nav a {
+  margin: 0.5rem;
+}
+@media (max-width: 1024px) {
+  .hero {
+    height: 70vh;
+    padding: 1rem;
+  }
+
+  .artist-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .grid {
+    gap: 1.5rem;
+  }
+
+  .bio-section,
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .residence-image {
+    width: 100%;
+  }
+
+  .signature-content {
+    padding: 1rem 0;
+  }
+
+  .sticky-nav a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .signature-content h3,
+  .cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta p {
+    font-size: 1rem;
+  }
+}
+
+
   </style>
 </head>
 
